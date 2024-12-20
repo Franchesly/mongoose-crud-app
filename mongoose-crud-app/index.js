@@ -6,6 +6,10 @@ const conn = require('./config/db')
 conn()
 const starterFruits = require('./config/seed')
 const Fruit = require('./models/fruit')
+const fruitRoutes = require('./routes/fruitRoutes')
+
+app.use(express.json())
+app.use('/api/fruits', fruitRoutes)
 
 //homeroute
 app.get('/', (req, res)=>{
